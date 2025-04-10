@@ -44,24 +44,40 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 ##### Functions
-  function myip() {
-            curl ifconfig.me
+
+```bash
+# IP
+function myip() {
+    curl ifconfig.me
 }
+
+# Weather
 function weather() {
     if [ -z "$1" ]; then
-        echo "Kullanım: weather <şehir>"
+        echo "Usage: weather <city>"
     else
         curl -s "wttr.in/$1?0"
     fi
 }
+
+# System
 function sysinfo() {
-    echo "İşletim Sistemi: $OSTYPE"
-    echo "Kullanıcı: $(whoami)"
-    echo "Dizin: $(pwd)"
+    # OS
+    echo "Operating System: $OSTYPE"
+    
+    # User
+    echo "User: $(whoami)"
+    
+    # Directory
+    echo "Directory: $(pwd)"
+    
+    # macOS
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "macOS Sürümü: $(sw_vers -productVersion)"
+        echo "macOS Version: $(sw_vers -productVersion)"
+    
+    # Linux
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        echo "Linux Dağıtımı: $(lsb_release -d | cut -f2-)"
+        echo "Linux Distribution: $(lsb_release -d | cut -f2-)"
     fi
 }
 
