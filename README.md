@@ -1,5 +1,5 @@
 ## Terminal101
-![Screenshot_20250410_172422.png](Screenshot_20250410_172422.png
+![My Terminal Screenshot](Screenshot_20250410_172422.png)
 #### Install ZSH
 `sudo apt install zsh`
 ##### Set zsh as default
